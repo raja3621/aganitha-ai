@@ -14,7 +14,6 @@ reference_dictionary = \
     'C':'C',
     'M':'M'
 }
-
 quantity_short_form_dictionary = \
 {
     'single':1,
