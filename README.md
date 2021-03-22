@@ -15,13 +15,16 @@ reference_dictionary = \
     'C':'C',
     'M':'M'
 }
+
 quantity_short_form_dictionary = \
 {
     'single':1,
     'double':2,
     'triple':3
 }
+
 --------------------------------
+
 
 **Next step is to iterate over the spoken english input and for each word present in the input
 we have to just look up in the reference dictionaries and get the abbrevations/transformations.**
