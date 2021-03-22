@@ -1,0 +1,62 @@
+reference_dictionary = \
+{
+    'dollars': '$',
+    'rupees' : 'Rs',
+    'one':1,
+    'two':2,
+    'three':3,
+    'four':4,
+    'five':5,
+    'A': 'A',
+    'B':'B',
+    'C':'C',
+    'M':'M'
+}
+
+quantity_short_form_dictionary = \
+{
+    'single':1,
+    'double':2,
+    'triple':3
+}
+
+def convert_spoken_english_2_written_english(spoken_english):
+    
+    words_in_spoken_english = spoken_english.split()    
+    hand_written_english = ""
+    
+    keys_of_reference_dict = list(reference_dictionary.keys())
+    keys_of_quantity_short_form_dict = list(quantity_short_form_dictionary.keys())
+    
+    repeat_flag = False
+    num_repeats = 0
+    
+    
+    for word in words_in_spoken_english:
+        
+        if word in keys_of_reference_dict:
+            hand_written_word = reference_dictionary[word]
+            hand_written_english += str(hand_written_word)
+            
+        elif word in keys_of_quantity_short_form_dict:
+            repeat_flag = True
+            num_repeats = quantity_short_form_dictionary[word]
+            
+    if repeat_flag == True:
+        hand_written_english = hand_written_english*num_repeats
+            
+    
+    return hand_written_english 
+    
+    base_case_inputs = ['two dollars','C M','triple A']
+
+for base_case in base_case_inputs:
+    hand_written_english = convert_spoken_english_2_written_english(base_case)
+    print(base_case+' -> '+hand_written_english)
+    
+    
+   OUTPUT
+   ------
+   two dollars -> 2$
+   C M -> CM
+   triple A -> AAA
